@@ -62,47 +62,47 @@ for obstacle in obstacles:
     obstacle_turtle.speed(1000)
     obstacle_turtle.shape("square")
     obstacle_turtle.shapesize(2.5)
-    obstacle_turtle.color("red")
+    obstacle_turtle.color("blue")
     obstacle_turtle.penup()
     obstacle_turtle.goto(obstacle)  # Set the obstacle turtle's position
 
-# print((0, 0)in obstacles)
-# # Define the state space
-# states = []
-# for x in range(-300, 301, 50):
-#     for y in range(-300, 301, 50):
-#         states.append((x, y))
+print((0, 0)in obstacles)
+# Define the state space
+states = []
+for x in range(-300, 301, 50):
+    for y in range(-300, 301, 50):
+        states.append((x, y))
 
-# # print(states)
-# goal_states =[]
-# for state in states:
-#     if state not in obstacles:
-#         goal_states.append(state)
-# print(len(goal_states))
+print(states)
+goal_states =[]
+for state in states:
+    if state not in obstacles:
+        goal_states.append(state)
+print(len(goal_states))
 
-# # Define the action space
-# actions = ['up', 'down', 'left', 'right']
-
-
+# Define the action space
+actions = ['up', 'down', 'left', 'right']
 
 
 
-# predator_table = {}
-# prey_table = {}
-
-# with open('condition.yaml', 'r') as f:
-#     predator_table = yaml.load(f, Loader=yaml.FullLoader)
-
-# with open('prey.yaml', 'r') as f:
-#     prey_table = yaml.load(f, Loader=yaml.FullLoader)
 
 
-#
-# # Define the hyperparameters
-# alpha = 0.1  # Learning rate
-# gamma = 0.9  # Discount factor
-# epsilon = 0.01  # Exploration rate
-#
+predator_table = {}
+prey_table = {}
+
+with open('1.2 condition.yaml', 'r') as f:
+    predator_table = yaml.load(f, Loader=yaml.FullLoader)
+
+with open('1.4 prey.yaml', 'r') as f:
+    prey_table = yaml.load(f, Loader=yaml.FullLoader)
+
+
+
+# Define the hyperparameters
+alpha = 0.1  # Learning rate
+gamma = 0.9  # Discount factor
+epsilon = 0.01  # Exploration rate
+
 # # Q-Learning algorithm
 # predator_state = (-300, -300)  # Start from the initial state
 # prey_state = (300, 300)
