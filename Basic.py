@@ -12,59 +12,59 @@ import time
 
 # Set up the screen
 screen = turtle.Screen()
-screen.setup(800, 600)
+screen.setup(700, 700)
 screen.title("Q-Learning with Turtles")
 screen.addshape("1.3 jerry.gif")
 screen.addshape("1.5 tom.gif")
 
 
-# score_turtle = turtle.Turtle()
-# score_turtle.penup()
-# score_turtle.goto(-300, 400)
-# score_turtle.hideturtle()
+score_turtle = turtle.Turtle()
+score_turtle.penup()
+score_turtle.goto(-300, 400)
+score_turtle.hideturtle()
 
 
 
-# # Create the turtles
-# target_turtle = turtle.Turtle()
-# target_turtle.shapesize(2.5)
-# target_turtle.speed(1000)
-# target_turtle.shape("1.3 jerry.gif")
-# target_turtle.color("green")
-# target_turtle.penup()
-# target_turtle.goto(-325, -325)
+# Create the turtles
+target_turtle = turtle.Turtle()
+target_turtle.shapesize(2.5)
+target_turtle.speed(1000)
+target_turtle.shape("1.3 jerry.gif")
+target_turtle.color("green")
+target_turtle.penup()
+target_turtle.goto(-325, -325)
 
 
-# target_turtle.pendown()
-# target_turtle.goto(-325, 325)
-# target_turtle.goto(325, 325)
-# target_turtle.goto(325, -325)
-# target_turtle.goto(-325, -325)
+target_turtle.pendown()
+target_turtle.goto(-325, 325)
+target_turtle.goto(325, 325)
+target_turtle.goto(325, -325)
+target_turtle.goto(-325, -325)
 
-# target_turtle.penup()
-# target_turtle.goto(300, 300)  # Set the target turtle's position
+target_turtle.penup()
+target_turtle.goto(300, 300)  # Set the target turtle's position
 
-# agent_turtle = turtle.Turtle()
-# agent_turtle.shapesize(2.5)
-# agent_turtle.shape("1.5 tom.gif")
-# agent_turtle.color("blue")
-# agent_turtle.penup()
-# agent_turtle.goto(-300, -300)  # Set the agent turtle's initial position
-# agent_turtle.speed(1000)
+agent_turtle = turtle.Turtle()
+agent_turtle.shapesize(2.5)
+agent_turtle.shape("1.5 tom.gif")
+agent_turtle.color("blue")
+agent_turtle.penup()
+agent_turtle.goto(-300, -300)  # Set the agent turtle's initial position
+agent_turtle.speed(1000)
 
-# # Create the obstacle turtle
-# obstacles = [(0, 0), (50, 0), (100, 0), (0, 50), (0, 100), (-100, 0), (-50, -50), (-100, 250),
-#              (250, -200), (200, -200), (250, -150), (250, -50), (250, 0), (250, 100),
-#              (250, 250), (200, 250), (150, 250), (-200, -250), (-150, -250), (-200, -150),
-#              (-200, -100), (-250, -50), (-250, 0), (-250, 50), (-250, 150), (-250, 250)]
-# for obstacle in obstacles:
-#     obstacle_turtle = turtle.Turtle()
-#     obstacle_turtle.speed(1000)
-#     obstacle_turtle.shape("square")
-#     obstacle_turtle.shapesize(2.5)
-#     obstacle_turtle.color("red")
-#     obstacle_turtle.penup()
-#     obstacle_turtle.goto(obstacle)  # Set the obstacle turtle's position
+# Create the obstacle turtle
+obstacles = [(0, 0), (50, 0), (100, 0), (0, 50), (0, 100), (-100, 0), (-50, -50), (-100, 250),
+             (250, -200), (200, -200), (250, -150), (250, -50), (250, 0), (250, 100),
+             (250, 250), (200, 250), (150, 250), (-200, -250), (-150, -250), (-200, -150),
+             (-200, -100), (-250, -50), (-250, 0), (-250, 50), (-250, 150), (-250, 250)]
+for obstacle in obstacles:
+    obstacle_turtle = turtle.Turtle()
+    obstacle_turtle.speed(1000)
+    obstacle_turtle.shape("square")
+    obstacle_turtle.shapesize(2.5)
+    obstacle_turtle.color("red")
+    obstacle_turtle.penup()
+    obstacle_turtle.goto(obstacle)  # Set the obstacle turtle's position
 
 # print((0, 0)in obstacles)
 # # Define the state space
