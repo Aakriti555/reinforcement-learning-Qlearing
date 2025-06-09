@@ -125,14 +125,14 @@ for s in goal_states:
         min_duration = 0
         min_duration_time = 0
         # print("Hello")
-        while min_duration_time != 1000:
+        while min_duration_time != 500:
 
 
 
 
 
 
-            randomm = True 
+            randomm = False
             show = True
 
             if not randomm:
@@ -142,7 +142,7 @@ for s in goal_states:
             if show:
                 agent_turtle.goto(predator_state)
                 score_turtle.clear()
-                score_turtle.write(f"Tom's Score: {score}  Jerry's Score: {prey_score}", font=("Arial", 8, "bold"))
+                score_turtle.write(f"Tom's Score: {score}  Jerry's Score: {prey_score}", font=("Arial", 25, "bold"))
                 agent_turtle.speed(1)
                 target_turtle.speed(1)
                 target_turtle.goto(prey_state)
@@ -171,7 +171,7 @@ for s in goal_states:
                     action = np.random.choice(actions)  # Explore
                 else:
                     action = max(prey_table[condition], key=prey_table[condition].get)  # Exploit
-                print(action)
+                # print(action)
                 # Get the next state
                 goal_x, goal_y = prey_state
                 if action == 'up':
@@ -204,7 +204,7 @@ for s in goal_states:
                     prey_table[next_condition] = {action: 0 for action in actions}
 
                 # Update the Q-table 
-                # Q formula 
+                # Q formula Q(S,A) <- Q(S,A) + aplha (R + gamma* max(Q(S' , A') - Q(S,A)))
                 prey_table[condition][action] += alpha * (
                         reward + gamma * max(prey_table[next_condition].values()) -
                         prey_table[condition][action])
