@@ -125,7 +125,7 @@ for s in goal_states:
         min_duration = 0
         min_duration_time = 0
         # print("Hello")
-        while min_duration_time != 500:
+        while min_duration_time != 1000:
 
 
 
@@ -143,8 +143,8 @@ for s in goal_states:
                 agent_turtle.goto(predator_state)
                 score_turtle.clear()
                 score_turtle.write(f"Tom's Score: {score}  Jerry's Score: {prey_score}", font=("Arial", 25, "bold"))
-                agent_turtle.speed(1)
-                target_turtle.speed(1)
+                agent_turtle.speed(5)
+                target_turtle.speed(5)
                 target_turtle.goto(prey_state)
 
 
