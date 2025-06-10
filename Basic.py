@@ -89,14 +89,14 @@ actions = ['up', 'down', 'left', 'right']
 
 
 
-predator_table = {}
-prey_table = {}
+# predator_table = {}
+# prey_table = {}
 
-# with open('1.2 condition.yaml', 'r') as f:
-#     predator_table = yaml.load(f, Loader=yaml.FullLoader)
+with open('condition.yaml', 'r') as f:
+    predator_table = yaml.load(f, Loader=yaml.FullLoader)
 
-# with open('1.4 prey.yaml', 'r') as f:
-#     prey_table = yaml.load(f, Loader=yaml.FullLoader)
+with open('prey.yaml', 'r') as f:
+    prey_table = yaml.load(f, Loader=yaml.FullLoader)
 
 
 
@@ -112,11 +112,11 @@ score= 0
 prey_score= 0
 
 for s in goal_states:
-    # with open('condition.yaml', 'w') as f:
-    #     yaml.dump(predator_table, f)
+    with open('condition.yaml', 'w') as f:
+        yaml.dump(predator_table, f)
     
-    # with open('prey.yaml', 'w') as f:
-    #     yaml.dump(prey_table, f)
+    with open('prey.yaml', 'w') as f:
+        yaml.dump(prey_table, f)
 
     print(s)
     for g_state in goal_states:
@@ -132,7 +132,7 @@ for s in goal_states:
 
 
 
-            randomm = False
+            randomm = True
             show = True
 
             if not randomm:
@@ -143,8 +143,8 @@ for s in goal_states:
                 agent_turtle.goto(predator_state)
                 score_turtle.clear()
                 score_turtle.write(f"Tom's Score: {score}  Jerry's Score: {prey_score}", font=("Arial", 25, "bold"))
-                agent_turtle.speed(5)
-                target_turtle.speed(5)
+                agent_turtle.speed(3)
+                target_turtle.speed(3)
                 target_turtle.goto(prey_state)
 
 
